@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Велики и мотоциклы</title>
+    <title>VeloMoto — Велосипеды и мотоциклы премиум-класса</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header class="header">
         <nav class="nav container">
             <div class="nav__logo">
-                <h2>VeloMoto</h2>
+                <h2><span class="logo-accent">Velo</span>Moto</h2>
             </div>
-            <ul class="nav__menu">
+            <ul class="nav__menu" id="navMenu">
                 <li class="nav__item">
                     <a href="#home" class="nav__link">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#catalog" class="nav__link">Каталог</a>
                 </li>
                 <li class="nav__item">
                     <a href="#bikes" class="nav__link">Велосипеды</a>
@@ -24,37 +28,125 @@
                     <a href="#motos" class="nav__link">Мотоциклы</a>
                 </li>
                 <li class="nav__item">
-                    <a href="#about" class="nav__link">О нас</a>
+                    <a href="#cta" class="nav__link nav__link--cta">Заказать</a>
                 </li>
             </ul>
+            <div class="nav__toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero">
+            <div class="hero__bg"></div>
             <div class="container">
                 <div class="hero__content">
-                    <h1 class="hero__title">Мир велики и мотоциклов</h1>
-                    <p class="hero__subtitle">Каталог велосипедов и мотоциклов с подробными характеристиками</p>
+                    <div class="hero__badge animate-fade-up">
+                        <i class="fas fa-bolt"></i> Новые поступления
+                    </div>
+                    <h1 class="hero__title animate-fade-up delay-1">Драйв. Скорость. Свобода.</h1>
+                    <p class="hero__subtitle animate-fade-up delay-2">Эксклюзивный каталог велосипедов и мотоциклов для настоящих ценителей адреналина</p>
+                    <div class="hero__buttons animate-fade-up delay-3">
+                        <a href="#catalog" class="btn btn--primary">
+                            <span>Смотреть каталог</span>
+                            <i class="fas fa-arrow-down"></i>
+                        </a>
+                        <a href="#cta" class="btn btn--secondary">
+                            <span>Консультация</span>
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                    <div class="hero__stats animate-fade-up delay-4">
+                        <div class="stat">
+                            <div class="stat__number" data-count="500">0</div>
+                            <div class="stat__label">Моделей</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__number" data-count="1000">0</div>
+                            <div class="stat__label">Клиентов</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__number" data-count="10">0</div>
+                            <div class="stat__label">Лет опыта</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__scroll">
+                <span>Листайте вниз</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <section class="section features">
+            <div class="container">
+                <div class="features__grid">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-card__title">Гарантия качества</h3>
+                        <p class="feature-card__text">Проверенные модели от ведущих брендов</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll delay-1">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3 class="feature-card__title">Техподдержка</h3>
+                        <p class="feature-card__text">Профессиональная консультация и сервис</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll delay-2">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3 class="feature-card__title">Доставка</h3>
+                        <p class="feature-card__text">Организуем доставку по всей России</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll delay-3">
+                        <div class="feature-card__icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h3 class="feature-card__title">Выгодные цены</h3>
+                        <p class="feature-card__text">Лучшие предложения на рынке</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section catalog-top">
+        <section id="catalog" class="section catalog-top">
             <div class="container">
-                <h2 class="section__title">Каталог</h2>
-                <p class="section__subtitle">Выберите раздел</p>
+                <div class="section__header animate-on-scroll">
+                    <h2 class="section__title">Выберите свой путь</h2>
+                    <p class="section__subtitle">Два мира скорости на ваш выбор</p>
+                </div>
                 <div class="catalog-top__grid">
-                    <a href="#bikes" class="catalog-top__card catalog-top__card--bike">
+                    <a href="#bikes" class="catalog-top__card catalog-top__card--bike animate-on-scroll">
+                        <div class="catalog-top__overlay"></div>
                         <div class="catalog-top__content">
+                            <div class="catalog-top__icon">
+                                <i class="fas fa-bicycle"></i>
+                            </div>
                             <h3 class="catalog-top__title">Велосипеды</h3>
-                            <p class="catalog-top__text">Горные, городские, шоссейные</p>
+                            <p class="catalog-top__text">Горные, городские, шоссейные и туристические</p>
+                            <span class="catalog-top__link">
+                                Смотреть коллекцию <i class="fas fa-arrow-right"></i>
+                            </span>
                         </div>
                     </a>
-                    <a href="#motos" class="catalog-top__card catalog-top__card--moto">
+                    <a href="#motos" class="catalog-top__card catalog-top__card--moto animate-on-scroll delay-1">
+                        <div class="catalog-top__overlay"></div>
                         <div class="catalog-top__content">
+                            <div class="catalog-top__icon">
+                                <i class="fas fa-motorcycle"></i>
+                            </div>
                             <h3 class="catalog-top__title">Мотоциклы</h3>
-                            <p class="catalog-top__text">Кросс, эндуро, спортивные</p>
+                            <p class="catalog-top__text">Кросс, эндуро, суперспорт и чопперы</p>
+                            <span class="catalog-top__link">
+                                Смотреть коллекцию <i class="fas fa-arrow-right"></i>
+                            </span>
                         </div>
                     </a>
                 </div>
@@ -63,8 +155,13 @@
 
         <section id="bikes" class="section">
             <div class="container">
-                <h2 class="section__title">Велосипеды</h2>
-                <p class="section__subtitle">Модели с подробными характеристиками</p>
+                <div class="section__header animate-on-scroll">
+                    <div class="section__label">
+                        <i class="fas fa-bicycle"></i> Велосипеды
+                    </div>
+                    <h2 class="section__title">Покорите любые трассы</h2>
+                    <p class="section__subtitle">Модели для города, гор и шоссе с максимальной производительностью</p>
+                </div>
                 <div id="bikes-list" class="cards-grid">
                     <!-- Контент будет добавлен позже -->
                 </div>
@@ -73,25 +170,119 @@
 
         <section id="motos" class="section section--bg">
             <div class="container">
-                <h2 class="section__title">Мотоциклы</h2>
-                <p class="section__subtitle">Популярные модели с подробными техническими характеристиками</p>
+                <div class="section__header animate-on-scroll">
+                    <div class="section__label section__label--moto">
+                        <i class="fas fa-motorcycle"></i> Мотоциклы
+                    </div>
+                    <h2 class="section__title">Адреналин в чистом виде</h2>
+                    <p class="section__subtitle">Гоночные и внедорожные легенды для экстремальных впечатлений</p>
+                </div>
                 <div id="motos-list" class="cards-grid">
                     <!-- Контент будет добавлен позже -->
                 </div>
             </div>
         </section>
 
+        <section id="cta" class="section cta">
+            <div class="cta__bg"></div>
+            <div class="container">
+                <div class="cta__content animate-on-scroll">
+                    <h2 class="cta__title">Готовы к новому приключению?</h2>
+                    <p class="cta__subtitle">Получите консультацию по подбору идеальной модели под ваши задачи</p>
+                    <div class="cta__buttons">
+                        <a href="tel:+79163506661" class="btn btn--primary btn--large">
+                            <i class="fas fa-phone"></i>
+                            <span>Позвонить нам</span>
+                        </a>
+                        <a href="#catalog" class="btn btn--secondary btn--large">
+                            <i class="fas fa-search"></i>
+                            <span>Смотреть каталог</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="about" class="section">
             <div class="container">
-                <h2 class="section__title">О проекте</h2>
-                <p class="about__text">Этот сайт создан для демонстрации каталога велосипедов и мотоциклов с их техническими характеристиками.</p>
+                <div class="about__grid">
+                    <div class="about__content animate-on-scroll">
+                        <div class="section__label">
+                            <i class="fas fa-info-circle"></i> О нас
+                        </div>
+                        <h2 class="section__title section__title--left">VeloMoto — ваш путеводитель в мире скорости</h2>
+                        <p class="about__text">Мы — команда энтузиастов, собравшая для вас лучший каталог велосипедов и мотоциклов. Наша миссия — помочь найти технику, которая подарит незабываемые эмоции и свободу передвижения.</p>
+                        <p class="about__text">Каждая модель в нашем каталоге тщательно отобрана и снабжена подробными техническими характеристиками для максимально осознанного выбора.</p>
+                        <div class="about__features">
+                            <div class="about__feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Только проверенные модели</span>
+                            </div>
+                            <div class="about__feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Подробные характеристики</span>
+                            </div>
+                            <div class="about__feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Профессиональные консультации</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about__image animate-on-scroll delay-1">
+                        <div class="about__image-wrapper">
+                            <div class="about__image-bg"></div>
+                            <div class="about__image-content">
+                                <i class="fas fa-motorcycle"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p class="footer__text">&copy; 2026 VeloMoto. Все права защищены.</p>
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__logo">
+                        <h2><span class="logo-accent">Velo</span>Moto</h2>
+                    </div>
+                    <p class="footer__text">Мир скорости и свободы. Каталог велосипедов и мотоциклов премиум-класса.</p>
+                    <div class="footer__social">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Каталог</h3>
+                    <ul class="footer__list">
+                        <li><a href="#bikes">Велосипеды</a></li>
+                        <li><a href="#motos">Мотоциклы</a></li>
+                        <li><a href="#catalog">Все разделы</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Информация</h3>
+                    <ul class="footer__list">
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#cta">Консультация</a></li>
+                        <li><a href="#home">Главная</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Контакты</h3>
+                    <ul class="footer__contacts">
+                        <li><a href="tel:+79163506661" style="color: inherit; text-decoration: none;"><i class="fas fa-phone"></i> +7 (916) 350-66-61</a></li>
+                        <li><i class="fas fa-envelope"></i> info@velomoto.ru</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Россия</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copy">&copy; 2026 VeloMoto. Все права защищены.</p>
+            </div>
         </div>
     </footer>
 
