@@ -28,6 +28,13 @@
                     <a href="#motos" class="nav__link">Мотоциклы</a>
                 </li>
                 <li class="nav__item">
+                    <button type="button" class="nav__link nav__compare" id="navCompare" data-compare-open aria-label="Сравнить выбранные модели">
+                        <i class="fas fa-scale-balanced"></i>
+                        <span>Сравнить</span>
+                        <span class="nav__compare-count" id="navCompareCount" hidden>0</span>
+                    </button>
+                </li>
+                <li class="nav__item">
                     <a href="#cta" class="nav__link nav__link--cta">Заказать</a>
                 </li>
             </ul>
@@ -119,8 +126,8 @@
         <section id="catalog" class="section catalog-top">
             <div class="container">
                 <div class="section__header animate-on-scroll">
-                    <h2 class="section__title">Выберите свой путь</h2>
-                    <p class="section__subtitle">Два мира скорости на ваш выбор</p>
+                    <h2 class="section__title">5 миров скорости</h2>
+                    <p class="section__subtitle">На ваш выбор</p>
                 </div>
                 <div class="catalog-top__grid">
                     <a href="#bikes" class="catalog-top__card catalog-top__card--bike animate-on-scroll">
@@ -149,6 +156,90 @@
                             </span>
                         </div>
                     </a>
+                    <a href="#emotos" class="catalog-top__card catalog-top__card--emoto animate-on-scroll delay-2">
+                        <div class="catalog-top__overlay"></div>
+                        <div class="catalog-top__content">
+                            <div class="catalog-top__icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3 class="catalog-top__title">Электро-мото</h3>
+                            <p class="catalog-top__text">Тихая мощность для трейлов и города</p>
+                            <span class="catalog-top__link">
+                                Смотреть коллекцию <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="#emtb" class="catalog-top__card catalog-top__card--emtb animate-on-scroll delay-3">
+                        <div class="catalog-top__overlay"></div>
+                        <div class="catalog-top__content">
+                            <div class="catalog-top__icon">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <h3 class="catalog-top__title">Электро-МТБ</h3>
+                            <p class="catalog-top__text">Вверх без усилий и с запасом хода</p>
+                            <span class="catalog-top__link">
+                                Смотреть коллекцию <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+                    <a href="#escooters" class="catalog-top__card catalog-top__card--escooter animate-on-scroll delay-4">
+                        <div class="catalog-top__overlay"></div>
+                        <div class="catalog-top__content">
+                            <div class="catalog-top__icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3 class="catalog-top__title">Электросамокаты</h3>
+                            <p class="catalog-top__text">Город на скорости каждый день</p>
+                            <span class="catalog-top__link">
+                                Смотреть коллекцию <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="emotos" class="section section--bg">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <div class="section__label section__label--emoto">
+                        <i class="fas fa-motorcycle"></i> Электро-мото
+                    </div>
+                    <h2 class="section__title">Тихая мощность</h2>
+                    <p class="section__subtitle">Электрические мотоциклы для трейлов, города и бездорожья</p>
+                </div>
+                <div id="emotos-list" class="cards-grid">
+                    <!-- Контент будет добавлен позже -->
+                </div>
+            </div>
+        </section>
+
+        <section id="emtb" class="section">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <div class="section__label section__label--emtb">
+                        <i class="fas fa-bicycle"></i> Электро-МТБ
+                    </div>
+                    <h2 class="section__title">Вверх без усилий</h2>
+                    <p class="section__subtitle">Электро-велосипеды для трейлов, гор и длинных маршрутов</p>
+                </div>
+                <div id="emtb-list" class="cards-grid">
+                    <!-- Контент будет добавлен позже -->
+                </div>
+            </div>
+        </section>
+
+        <section id="escooters" class="section section--bg">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <div class="section__label section__label--escooter">
+                        <i class="fas fa-bolt"></i> Электросамокат
+                    </div>
+                    <h2 class="section__title">Город на скорости</h2>
+                    <p class="section__subtitle">Компактные электросамокаты для быстрых поездок по городу</p>
+                </div>
+                <div id="escooters-list" class="cards-grid">
+                    <!-- Контент будет добавлен позже -->
                 </div>
             </div>
         </section>
@@ -239,6 +330,59 @@
                 </div>
             </div>
         </section>
+
+        <section id="picker" class="section picker">
+            <div class="container">
+                <div class="section__header animate-on-scroll">
+                    <div class="section__label">
+                        <i class="fas fa-wand-magic-sparkles"></i> Подбор по бюджету
+                    </div>
+                    <h2 class="section__title">Есть сумма — найдём технику</h2>
+                    <p class="section__subtitle">Введите бюджет и выберите тип техники — мы покажем сразу все подходящие варианты. Это могут быть модели как из каталога, так и вне его.</p>
+                </div>
+                <div class="picker__panel animate-on-scroll">
+                    <form class="picker__form" id="pickerForm">
+                        <div class="picker__field picker__field--budget">
+                            <label for="budgetInput">Ваш бюджет</label>
+                            <div class="picker__input-wrap">
+                                <input type="number" id="budgetInput" name="budget" min="0" step="1000" placeholder="Например, 500 000" required>
+                                <span>₽</span>
+                            </div>
+                        </div>
+                        <div class="picker__field picker__field--type">
+                            <span class="picker__label" id="typeLabel">Что ищем?</span>
+                            <div class="picker__switch" id="typeSwitch" role="group" aria-labelledby="typeLabel">
+                                <button type="button" class="picker__switch-btn active" data-type="bike" aria-pressed="true">
+                                    <i class="fas fa-bicycle"></i> Велосипед
+                                </button>
+                                <button type="button" class="picker__switch-btn" data-type="moto" aria-pressed="false">
+                                    <i class="fas fa-motorcycle"></i> Мотоцикл
+                                </button>
+                                <button type="button" class="picker__switch-btn" data-type="emoto" aria-pressed="false">
+                                    <i class="fas fa-motorcycle"></i> Электро-мото
+                                </button>
+                                <button type="button" class="picker__switch-btn" data-type="emtb" aria-pressed="false">
+                                    <i class="fas fa-bicycle"></i> Электро-МТБ
+                                </button>
+                                <button type="button" class="picker__switch-btn" data-type="escooter" aria-pressed="false">
+                                    <i class="fas fa-bolt"></i> Электросамокат
+                                </button>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn--primary picker__submit">
+                            <i class="fas fa-search"></i>
+                            <span>Подобрать</span>
+                        </button>
+                    </form>
+                    <div class="picker__result" id="pickerResult" aria-live="polite">
+                        <div class="picker__empty">
+                            <i class="fas fa-sliders-h"></i>
+                            <p>Укажите бюджет и тип техники — мы покажем все варианты, даже если их нет в каталоге.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -285,6 +429,25 @@
             </div>
         </div>
     </footer>
+
+    <div class="compare-modal" id="compareModal" hidden aria-hidden="true">
+        <div class="compare-modal__backdrop" data-compare-close></div>
+        <div class="compare-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="compareModalTitle">
+            <div class="compare-modal__head">
+                <div>
+                    <span class="compare-modal__label">Сравнение</span>
+                    <h3 id="compareModalTitle">Электрическая техника</h3>
+                </div>
+                <div class="compare-modal__actions">
+                    <button type="button" class="compare-modal__clear" id="compareClear" data-compare-clear>Очистить</button>
+                    <button type="button" class="compare-modal__close" data-compare-close aria-label="Закрыть сравнение">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="compare-modal__body" id="compareModalBody"></div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
